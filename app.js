@@ -1,7 +1,7 @@
 console.log('hello');
 
 setInterval(function(){
-    console.log('hyeee');
+    //console.log('hyeee');
 }, 3000);
 const fs = require('fs');
 const os = require('os');
@@ -41,6 +41,7 @@ if(command === 'add')
 {
     console.log('Adding new note');
     var note = notes.addnote(argv.title, argv.body);
+    console.log(note);
     if(note)
     {
         console.log('Note created');
@@ -65,8 +66,10 @@ else if(command === 'read')
 }
 else if(command === 'remove')
 {
-    console.log('Removing notes');
-    notes.removenote(argv.title);
+    //console.log('Removing notes');
+    var noteremoved = notes.removenote(argv.title);
+    var message = noteremoved ? 'Note was removed' : 'Note not found';
+    console.log(message);
 }
 else
 {
